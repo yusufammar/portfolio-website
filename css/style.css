@@ -1,13 +1,13 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: purple;
+    font-size: 150%;
    
 }
 
-div{
-    padding:10px
-    
-} 
+.mainSection{
+    margin-top: 5%;
+}
 
  .content{
     padding-left: 5%;
@@ -24,13 +24,37 @@ header {
     
 }
 
+.bigText{
+    font-size: 60px;
+}
+
 #profile{
     padding-left: 40px;
     width: 50%;
     height: 100%;    
+}
 
+#about{
+    display:flex; 
+}
+
+
+
+
+#myPic{
+    width: 30%;
 
 }
+
+#aboutMe{
+    width: 60%;
+}
+
+#myDescription{
+    color:grey;
+    font-size: 30px;
+}
+
 #skillsListDiv{
     display: flex;
     flex-wrap: wrap;
@@ -43,10 +67,14 @@ header {
     flex-wrap: wrap;
     color: black;
     justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #projectsListDiv{
        color: black;
+       padding-left: 5%;
+       padding-right: 5%;
     /* justify-content: space-between; */
 }
 
@@ -54,7 +82,7 @@ header {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Increased shadow intensity */
   border: 1px solid #ddd; /* Light gray border */
-  width: 200px;
+  width: 20%;
   text-align: center;
   margin-bottom: 20px;
       
@@ -64,9 +92,10 @@ header {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Increased shadow intensity */
     border: 1px solid #ddd; /* Light gray border */
-    width: 400px;
+    width: 30%;
     text-align: center;
     margin-bottom: 20px;
+    padding: 20px;
         
   }
 
@@ -105,6 +134,7 @@ footer{
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 15px;
+    font-size: large;
     
   }
 
@@ -141,7 +171,7 @@ footer{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow */
     text-align: center;
-    width: 300px;
+    width: 400px;
   }
 
   /* Show the overlay */
