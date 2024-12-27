@@ -20,13 +20,17 @@ header {
     width: 50%;
     height: 100%;    
 
-    
+
 }
 #skillsListDiv{
     display: flex;
     flex-wrap: wrap;
     color: black;
     justify-content: space-between;
+}
+#projectsListDiv{
+       color: black;
+    /* justify-content: space-between; */
 }
 
 .skillBox{
@@ -42,6 +46,10 @@ header {
 .skillIcon{
     width: 75px;
    
+}
+
+.shortDivider{
+    width: 75%;
 }
 
 
