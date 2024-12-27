@@ -1,7 +1,7 @@
 
 
 window.onload = function () {
-    let recommendationsList = JSON.parse(localStorage.getItem('recommendations')) || [];
+    let recommendationsList = getRecommendations();
 
     if (recommendationsList.length == 0) {
         recommendationsList = [
@@ -11,7 +11,7 @@ window.onload = function () {
         ];
 
         // Save the initial recommendations to localStorage
-        localStorage.setItem('recommendations', JSON.stringify(recommendationsList))
+        saveRecommendations(recommendationsList);
     }
 
 }
@@ -133,27 +133,22 @@ function addRecommendation(event) {
         let recommendationsList = getRecommendations();
         recommendationsList.push(messageInput);
         saveRecommendations(recommendationsList);
-
         showPopup();
-        
-        //console.log(recommendationsList);
-        //alert("Recommendation Added"); //page refreshes (on submit click)
         return true;
     }
 }
 
-    // Function to show the popup
     function showPopup() {
         const overlay = document.getElementById('popupOverlay');
         overlay.classList.add('show');
     }
 
-    // Function to close the popup
+
     function closePopup() {
         const overlay = document.getElementById('popupOverlay');
         overlay.classList.remove('show');
         // Refresh the page
-location.reload();
+        location.reload();
 
     }
 
