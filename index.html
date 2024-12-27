@@ -48,6 +48,16 @@
             <h1>Recommendations</h1>
             <div id="recommendationsListDiv"></div>
         </div>
+        <div id="addRecommendation">
+            <h1>Leave a Recommendation</h1>  
+            <form name="recommendationForm" onsubmit="return addRecommendation()">
+            <input type="text" name="nameInput" style="width: 50%" placeholder="Name (Optional)">     
+            <br><br>
+            <textarea type="text" name="messageInput" style="width: 50%" rows="6"  placeholder="Message"></textarea> 
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
     </body>
 
     <script src="js/script.js"></script>

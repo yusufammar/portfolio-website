@@ -1,3 +1,39 @@
+
+
+window.onload = function() {
+   let recommendationsList = JSON.parse(localStorage.getItem('recommendations')) || []; 
+
+    if (recommendationsList.length==0){
+        recommendationsList = [
+            "Jane is a very quick learner and quickly grasps key concepts of Web development. She got a great attitude & she is an excellent team player. She has a curious mind and asks the right question. She takes initiative within a team and has potentials to lead the team. ", 
+            " Working with Jane has been an awesome experience. She is highly knowledgable and always goes the extra step to make sure everything is right. For any future projects that need her expertise I would definitely want to work with her again. ", 
+            "I had worked along with Jane during the initial phase of our venture which needed Web development. She is a committed resource who has in depth knowledge about the domain. She will be an asset for any organisation! "
+        ];
+
+    // Save the initial recommendations to localStorage
+    localStorage.setItem('recommendations', JSON.stringify(recommendationsList))
+    }
+
+  
+  
+}  
+// Access localStorage variable outside the onload function
+function getRecommendations() {
+    let recommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
+    console.log("Outside onload: ", recommendations);
+    return recommendations;
+}
+
+// // Call the function after the page has loaded
+// setTimeout(() => {
+//     const recommendationsList = getRecommendations();
+//     console.log("Recommendations from outside onload: ", recommendationsList);
+// }, 100); // Add a slight delay to ensure onload has completed
+
+
+
+//console.log(recommendationsList);
+
 let skillsList = [
     { "Skill": "HTML", "Years of Experience": 2, "imgPath": "img/html.png" },
     { "Skill": "CSS", "Years of Experience": 2, "imgPath": "img/css.png" },
@@ -13,16 +49,14 @@ let projectsList = [
     { "Title": "Fashion Website", "Description": "Created a styled multi-page website for a new player in the fashion industry and integrated it with a shopping cart, using stripe for payment gateway" },
 ]
 
-let recommendationsList = [
-    "Jane is a very quick learner and quickly grasps key concepts of Web development. She got a great attitude & she is an excellent team player. She has a curious mind and asks the right question. She takes initiative within a team and has potentials to lead the team. ", 
-    " Working with Jane has been an awesome experience. She is highly knowledgable and always goes the extra step to make sure everything is right. For any future projects that need her expertise I would definitely want to work with her again. ", 
-    "I had worked along with Jane during the initial phase of our venture which needed Web development. She is a committed resource who has in depth knowledge about the domain. She will be an asset for any organisation! "
-];
+
 
 
 populateSkillsList();
 populateProjectsList();
 populateRecommendationsList();
+
+//console.log(recommendationsList);
 
 
 function populateSkillsList() {
@@ -61,6 +95,7 @@ function populateProjectsList() {
 }
 
 function populateRecommendationsList() {
+    let recommendationsList=getRecommendations();
     let recommendationsListDiv = document.getElementById("recommendationsListDiv");
 
     for (let i = 0; i < recommendationsList.length; i++) {
@@ -86,6 +121,30 @@ function returnDescription(index) {
     }
 
     return unorderedListElement;
+}
+
+function addRecommendation(){
+    let messageInput= document.forms.recommendationForm.messageInput.value;
+    if (messageInput == "") {
+        alert("Message must be filled out");
+        return false;
+      }
+    else
+    {
+        let recommendationsList=getRecommendations();
+        recommendationsList.push(messageInput);
+
+         // Save the initial recommendations to localStorage
+    localStorage.setItem('recommendations', JSON.stringify(recommendationsList))
+    console.log(recommendationsList);
+    alert("Recommendation Added");
+        
+        
+        //populateRecommendationsList();
+}
+
+      
+    
 }
 
 
