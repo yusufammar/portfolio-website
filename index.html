@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="css/style.css">
-        
-    </head>
-    
 
-    <body>
-    
-        <header>
-            <div id="profile">
-                <h2>Yusuf Ammar</h2>
-                <h4>yammar@gmail.com</h4>
-                <h4>+123456789</h4>
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 
-            </div>
-         
-                <div id="nav"> 
-                    <nav>
-                   
-                      <a href="#about">About</a>
-                      <a href="#skills">Skills</a>
-                      <a href="#projects">Projects</a>
-                      <a href="#recommendations">recommendations</a>
-                  
-                  </nav>
-                </div>
-            
-        </header>
+</head>
 
+
+<body>
+
+
+    <header id="home">
+        <div id="profile">
+            <h2>Yusuf Ammar</h2>
+            <h4>yammar@gmail.com</h4>
+            <h4>+123456789</h4>
+
+        </div>
+
+        <div id="nav">
+            <nav>
+
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#recommendations">recommendations</a>
+
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="content">
         <div id="about">
             <h1>Hi</h1>
         </div>
@@ -38,29 +41,49 @@
             <h1>Skills</h1>
             <div id="skillsListDiv"></div>
         </div>
-        
+
         <div id="projects">
             <h1>Projects</h1>
             <div id="projectsListDiv"></div>
         </div>
-       
+
         <div id="recommendations">
             <h1>Recommendations</h1>
             <div id="recommendationsListDiv"></div>
-        </div>
-        <div id="addRecommendation">
-            <h1>Leave a Recommendation</h1>  
-            <form name="recommendationForm" onsubmit="return addRecommendation()">
-            <input type="text" name="nameInput" style="width: 50%" placeholder="Name (Optional)">     
-            <br><br>
-            <textarea type="text" name="messageInput" style="width: 50%" rows="6"  placeholder="Message"></textarea> 
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-        </div>
-    </body>
 
-    <script src="js/script.js"></script>
+            <div id="addRecommendation">
+                <h1>Leave a Recommendation</h1>
+                <form name="recommendationForm" onsubmit="addRecommendation(event)">
+                    <input type="text" name="nameInput" class="textInput" placeholder="Name (Optional)">
+                    <br><br>
+                    <textarea type="text" name="messageInput" class="textInput" rows="6"
+                        placeholder="Message"></textarea>
+                    <br><br>
+                    <input type="submit" class="btn" value="Submit">
+                </form>
+
+                <div class="overlay" id="popupOverlay">
+                    <div class="popup">
+                        <img src="img/check.png" style="width: 50px;">
+                        <h3>Thanks for leaving a recommendation!</h3>
+
+                        <button class="btn" onclick="closePopup()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <button onclick="showPopup()">Show Popup</button> -->
+
+
+
+    <footer>
+        <a href="#home"> <img class="homeIcon" src="img/home.png"></a>
+    </footer>
+</body>
+
+<script src="js/script.js"></script>
 
 </html>
-

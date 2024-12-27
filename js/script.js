@@ -121,7 +121,9 @@ function saveRecommendations(recommendationsList) {
 
 
 
-function addRecommendation() {
+
+function addRecommendation(event) {
+    event.preventDefault();
     let messageInput = document.forms.recommendationForm.messageInput.value;
     if (messageInput == "") {
         alert("Message must be filled out");
@@ -132,12 +134,28 @@ function addRecommendation() {
         recommendationsList.push(messageInput);
         saveRecommendations(recommendationsList);
 
-        console.log(recommendationsList);
-        alert("Recommendation Added"); //page refreshes (on submit click)
+        showPopup();
+        
+        //console.log(recommendationsList);
+        //alert("Recommendation Added"); //page refreshes (on submit click)
         return true;
     }
 }
 
+    // Function to show the popup
+    function showPopup() {
+        const overlay = document.getElementById('popupOverlay');
+        overlay.classList.add('show');
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        const overlay = document.getElementById('popupOverlay');
+        overlay.classList.remove('show');
+        // Refresh the page
+location.reload();
+
+    }
 
 
 
