@@ -28,6 +28,14 @@ header {
     color: black;
     justify-content: space-between;
 }
+
+#recommendationsListDiv{
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    justify-content: space-between;
+}
+
 #projectsListDiv{
        color: black;
     /* justify-content: space-between; */
@@ -42,6 +50,16 @@ header {
   margin-bottom: 20px;
       
 }
+
+.recommendationBox{
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Increased shadow intensity */
+    border: 1px solid #ddd; /* Light gray border */
+    width: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+        
+  }
 
 .skillIcon{
     width: 75px;
